@@ -3,7 +3,7 @@
 ## Usage
 
 ```lua
-{
+require("lazy").setup({
   "jla2000/msr-nvim-tools",
   ft = "cpp",
   dependencies = {
@@ -17,5 +17,5 @@
       desc = "Bauhaus Single File Analysis",
     },
   },
-}
+})
 ```
