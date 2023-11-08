@@ -65,8 +65,10 @@ function tools.bauhaus_analyze()
 		end),
 		on_exit = vim.schedule_wrap(function(_, code, signal)
 			append_to_quickfix("Exited with code " .. code, "")
-			notify("Analysis completed.", nil, {
-				icon = (code == 0) and "" or "",
+			local title = (code == 0) and "Analysis completed." or "Analysis failed!"
+			local icon = (code == 0) and "" or ""
+			notify(title, nil, {
+				icon = icon,
 				replace = bauhaus_spinner,
 				timeout = 3000,
 			})
