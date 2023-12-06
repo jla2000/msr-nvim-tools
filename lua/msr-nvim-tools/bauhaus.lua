@@ -17,10 +17,11 @@ function M.analyze()
   local spinner_frame_idx = 1
   local bauhaus_spinner = nil
 
+  local filename = vim.fn.expand("%:t")
   local function update_spinner()
     if bauhaus_spinner then
       spinner_frame_idx = (spinner_frame_idx + 1) % #spinner_frames
-      bauhaus_spinner = notify(nil, nil, {
+      bauhaus_spinner = notify(filename, nil, {
         icon = spinner_frames[spinner_frame_idx],
         replace = bauhaus_spinner,
         hide_from_history = true,
@@ -31,7 +32,6 @@ function M.analyze()
     end
   end
 
-  local filename = vim.fn.expand("%:t")
   bauhaus_spinner = notify(filename, "info", {
     title = "Bauhaus Single-File Analysis",
     icon = spinner_frames[spinner_frame_idx],
