@@ -1,15 +1,19 @@
 local bauhaus = require("msr-nvim-tools.bauhaus")
 local snippets = require("msr-nvim-tools.snippets")
 
-snippets.create()
+local M = {}
 
-vim.api.nvim_create_user_command(
-  "BauhausAnalyze", -- name
-  bauhaus.analyze, -- command
-  { -- opts
-    nargs = 0,
-    desc = "Bauhaus Single-File Analysis",
-  }
-)
+function M.setup()
+  snippets.create()
 
-return {}
+  vim.api.nvim_create_user_command(
+    "BauhausAnalyze", -- name
+    bauhaus.analyze, -- command
+    { -- opts
+      nargs = 0,
+      desc = "Bauhaus Single-File Analysis",
+    }
+  )
+end
+
+return M

@@ -11,6 +11,7 @@ require("lazy").setup({
     "rcarriga/nvim-notify",
     "L3MON4D3/LuaSnip",
   },
+  config = true,
   keys = {
     {
       "<leader>ba",
