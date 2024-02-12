@@ -1,7 +1,7 @@
+local M = {}
+
 local bauhaus = require("msr-nvim-tools.bauhaus")
 local snippets = require("msr-nvim-tools.snippets")
-
-local M = {}
 
 function M.setup()
   snippets.create()
